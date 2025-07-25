@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List latihan revou</title>
+    <link rel="stylesheet" href="css/styles.css">
+   
+</head>
+<body>
+    <!-- Header Stats -->
+    <div class="stats-header">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">TOTAL TASKS</div>
+                    <div class="stat-value">
+                        <div class="stat-icon teal">
+                            <div class="stat-dot"></div>
+                        </div>
+                        <span id="totalTasks">0</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-label">COMPLETED</div>
+                    <div class="stat-value">
+                        <div class="stat-icon green">
+                            <div class="stat-dot"></div>
+                        </div>
+                        <span id="completedTasks">0</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-label">PENDING</div>
+                    <div class="stat-value">
+                        <div class="stat-icon orange">
+                            <div class="stat-dot"></div>
+                        </div>
+                        <span id="pendingTasks">0</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-label">PROGRESS</div>
+                    <div class="stat-value">
+                        <div class="stat-icon blue">
+                            <div class="stat-dot"></div>
+                        </div>
+                        <span id="progressPercentage">0%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <!-- Add Task Section -->
+            <div class="add-task-section">
+                <div class="input-group">
+                    <input type="text" id="newTaskInput" placeholder="silahkan masukan kegiatan" class="task-input">
+                </div>
+                <div class="date-group">
+                    <input type="date" id="dueDateInput" placeholder="mm/dd/yyyy" class="date-input">
+                </div>
+                <button id="addTaskBtn" class="add-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Search and Controls -->
+            <div class="controls-section">
+                <div class="controls-left">
+                    <div class="search-box">
+                        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                        <input type="text" id="searchInput" placeholder="Search tasks... (Ctrl+F)" class="search-input">
+                    </div>
+                    
+                       
+                    </button>
+                </div>
+               
+
+               
+                    <button id="filterBtn" class="filter-btn">
+                         
+                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="22,3 2,3 10,12.46 10,19 14,21 14,12.46"></polygon>
+                        </svg>
+                        FILTER
+                    </button>
+                    <div id="filterDropdown" class="filter-dropdown" style="display:none; position:absolute; left:0; top:100%; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.15); border-radius:6px; margin-top:4px; z-index:10; min-width:120px;">
+                        <button class="dropdown-item" data-filter="all">All</button>
+                        <button class="dropdown-item" data-filter="completed">Completed</button>
+                        <button class="dropdown-item" data-filter="pending">Pending</button>
+                    </div>
+                    
+                    <button id="deleteAllBtn" class="delete-all-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="3,6 5,6 21,6"></polyline>
+                            <path d="m19,6v14a2,2 0 0,1-2,2H7a2,2 0 0,1-2-2V6m3,0V4a2,2 0 0,1,2-2h4a2,2 0 0,1,2,2v2"></path>
+                        </svg>
+                        DELETE ALL
+                    </button>
+                </div>
+            </div>
+
+            <!-- Task Table -->
+            <div class="task-table">
+                <div class="table-header">
+                    <div class="header-cell">TASK</div>
+                    <div class="header-cell">DUE DATE</div>
+                    <div class="header-cell">STATUS</div>
+                    <div class="header-cell">ACTIONS</div>
+                </div>
+                
+                <div id="tasksList" class="tasks-list">
+                    <div class="no-tasks">
+                        No tasks
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                Made with by Luts :v
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
